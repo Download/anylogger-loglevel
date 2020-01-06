@@ -1,0 +1,15 @@
+<script src="https://unpkg.com/anylogger@0.21.0/anylogger.min.js"></script>
+<script src="https://unpkg.com/loglevel@1.6.6/dist/loglevel.min.js"></script>
+<script src="anylogger-loglevel.min.js"></script>
+<script>(function(){ // IIFE
+  var log = anylogger('index.html')
+  log.info('Logging is simple!')
+})()</script>
+<h1>anylogger-loglevel</h1>
+<b><code><a href="https://npmjs.com/package/anylogger">anylogger</a></code> adapter for <code><a href="https://npmjs.com/package/loglevel">loglevel</a></code></b>
+<h2>Open the devtools console to see logging</h2>
+<p>To see logging output, make sure to set the loglevel for index.html to DEBUG:</p>
+<code><pre>
+  localStorage.setItem('loglevel:index.html', 'DEBUG')
+</pre></code>
+<p>then refresh the page</p>

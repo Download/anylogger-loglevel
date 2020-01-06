@@ -1,0 +1,48 @@
+{
+  "name": "anylogger-loglevel",
+  "version": "0.1.0",
+  "description": "Anylogger adapter for loglevel",
+  "main": "anylogger-loglevel.js",
+  "files": [
+    "anylogger-loglevel.js",
+    "anylogger-loglevel.min.js",
+    "anylogger-loglevel.spec.js",
+    "index.html"
+  ],
+  "scripts": {
+    "build": "cross-env NODE_ENV=production node build.js",
+    "prepare": "npm run test && npm run build",
+    "test": "mocha anylogger-loglevel.spec.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/download/anylogger-loglevel.git"
+  },
+  "keywords": [
+    "anylogger",
+    "loglevel",
+    "anylogger-loglevel",
+    "log"
+  ],
+  "author": "Stijn de Witt",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/download/anylogger-loglevel/issues"
+  },
+  "homepage": "https://github.com/download/anylogger-loglevel#readme",
+  "dependencies": {},
+  "peerDependencies": {
+    "anylogger": ">=0.20.0",
+    "loglevel": "^1.6.6"
+  },
+  "devDependencies": {
+    "anylogger": "^0.21.0",
+    "chai": "^4.2.0",
+    "cross-env": "^6.0.3",
+    "gzip-size": "^5.1.1",
+    "loglevel": "^1.6.6",
+    "mocha": "^7.0.0",
+    "sinon": "^8.0.3",
+    "uglify-js": "^3.7.3"
+  }
+}
