@@ -1,4 +1,4 @@
-# anylogger-loglevel <sub><sup>0.1.0</sup></sub>
+# anylogger-loglevel <sub><sup>0.2.0</sup></sub>
 ### Anylogger adapter for loglevel
 
 [![npm](https://img.shields.io/npm/v/anylogger-loglevel.svg)](https://npmjs.com/package/anylogger-loglevel)
@@ -16,9 +16,9 @@ This package is meant for application projects that are using libraries using `a
 
 ## Download
 
-* [anylogger-loglevel.js](https://unpkg.com/anylogger-loglevel@0.1.0/anylogger-loglevel.js) 
+* [anylogger-loglevel.js](https://unpkg.com/anylogger-loglevel@0.2.0/anylogger-loglevel.js) 
   (fully commented source ~1kB)
-* [anylogger-loglevel.min.js](https://unpkg.com/anylogger-loglevel@0.1.0/anylogger-loglevel.min.js) 
+* [anylogger-loglevel.min.js](https://unpkg.com/anylogger-loglevel@0.2.0/anylogger-loglevel.min.js) 
   (minified 500 bytes, gzipped ~[300](#gzip-size) bytes)
 
 
@@ -28,7 +28,7 @@ This package is meant for application projects that are using libraries using `a
 ```html
 <script src="https://unpkg.com/anylogger@0.21.0/anylogger.min.js"></script>
 <script src="https://unpkg.com/loglevel@1.6.6/dist/loglevel.min.js"></script>
-<script src="https://unpkg.com/anylogger-loglevel@0.1.0/anylogger-loglevel.min.js"></script>
+<script src="https://unpkg.com/anylogger-loglevel@0.2.0/anylogger-loglevel.min.js"></script>
 <script>(function(){ // IIFE
   var log = anylogger('index.html')
   log.info('Logging is simple!')
