@@ -1,38 +1,39 @@
-var a = require('anylogger')
-var loglevel = require('loglevel')
-loglevel = hook(loglevel, loglevel.setLevel)
+import anylogger from 'anylogger'
+import log from 'loglevel'
+hook(log, 'setLevel')
 
 // maintain a mapping of names to loglevel loggers
-var m = Object.create(null)
+var loggers = Object.create(null)
 
 // make level numbers compatible with loglevel
-a.levels = {
+anylogger.levels = {
   trace: 0, 
   debug: 1,
   log: 1, // loglevel maps log to debug
   info: 2, 
   warn: 3,
   error: 4, 
-};
+}
 
-// hooks a setLevel function that re-extends all anylogger loggers
-function hook(o,s){
-  o.setLevel = function(){
-    var r = s.apply(o, arguments)
-    for (var name in a()) a.ext(a(name))
-    return r
+// hooks a method so that when it's called, all anylogger loggers will be re-extended
+function hook(logger, methodName){
+  var method = logger[methodName]
+  logger[methodName] = function(){
+    var result = method.apply(logger, arguments)
+    for (var name in anylogger()) anylogger.ext(anylogger(name))
+    return result
   }
-  return o
+  return logger
 }
 
 // override anylogger.ext() to make every log method use loglevel
-a.ext = function(l,o) {
-  o = m[l.name] || (m[l.name] = hook(loglevel.getLogger(l.name), loglevel.getLogger(l.name).setLevel))
-  for (v in a.levels) {
-    l[v] = o[v]
+anylogger.ext = function(logger) {
+  var l = loggers[logger.name] || (loggers[logger.name] = hook(log.getLogger(logger.name), 'setLevel'))
+  for (var level in anylogger.levels) {
+    logger[level] = l[level]
   }
-  l.enabledFor = function(lvl) {
-    return a.levels[lvl] >= o.getLevel()
+  logger.enabledFor = function(level) {
+    return anylogger.levels[level] >= l.getLevel()
   }
-  return l;
+  return logger;
 };
