@@ -1,18 +1,29 @@
 {
   "name": "anylogger-loglevel",
-  "version": "0.2.0",
+  "version": "1.0.0",
   "description": "Anylogger adapter for loglevel",
-  "main": "anylogger-loglevel.js",
+  "src": "anylogger-loglevel.js",
+  "main": "anylogger-loglevel.cjs.js",
+  "module": "anylogger-loglevel.esm.js",
+  "iife": "anylogger-loglevel.iife.js",
+  "min": "anylogger-loglevel.min.js",
+  "spec": "anylogger-loglevel.spec.js",
   "files": [
     "anylogger-loglevel.js",
+    "anylogger-loglevel.cjs.js",
+    "anylogger-loglevel.esm.js",
+    "anylogger-loglevel.iife.js",
     "anylogger-loglevel.min.js",
     "anylogger-loglevel.spec.js",
-    "index.html"
+    "test.html"
   ],
   "scripts": {
-    "build": "cross-env NODE_ENV=production node build.js",
-    "prepare": "npm run test && npm run build",
-    "test": "mocha anylogger-loglevel.spec.js"
+    "build": "npm run test -s && npm run minify -s && npm run docs -s",
+    "docs": "cross-env NODE_ENV=production node build.js docs",
+    "minify": "cross-env NODE_ENV=production node build.js minify",
+    "package": "cross-env NODE_ENV=production rollup -c",
+    "prepare": "npm run build",
+    "test": "npm run package -s && mocha anylogger-loglevel.spec.js"
   },
   "repository": {
     "type": "git",
@@ -30,19 +41,22 @@
     "url": "https://github.com/download/anylogger-loglevel/issues"
   },
   "homepage": "https://github.com/download/anylogger-loglevel#readme",
-  "dependencies": {},
+  "dependencies": {
+    "anylogger": "^1.0.3",
+    "loglevel": "^1.6.8"
+  },
   "peerDependencies": {
-    "anylogger": ">=0.20.0",
+    "anylogger": "^1.0.3",
     "loglevel": "^1.6.6"
   },
   "devDependencies": {
-    "anylogger": "^0.21.0",
     "chai": "^4.2.0",
-    "cross-env": "^6.0.3",
+    "cross-env": "^7.0.2",
     "gzip-size": "^5.1.1",
-    "loglevel": "^1.6.6",
-    "mocha": "^7.0.0",
-    "sinon": "^8.0.4",
-    "uglify-js": "^3.7.3"
+    "mocha": "^8.0.1",
+    "rollup": "^2.18.0",
+    "rollup-plugin-re": "^1.0.7",
+    "sinon": "^9.0.2",
+    "uglify-js": "^3.10.0"
   }
 }

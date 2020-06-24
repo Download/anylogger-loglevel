@@ -1,10 +1,9 @@
-# anylogger-loglevel <sub><sup>0.2.0</sup></sub>
+# anylogger-loglevel <sub><sup>1.0.0</sup></sub>
 ### Anylogger adapter for loglevel
 
 [![npm](https://img.shields.io/npm/v/anylogger-loglevel.svg)](https://npmjs.com/package/anylogger-loglevel)
 [![license](https://img.shields.io/npm/l/anylogger-loglevel.svg)](https://opensource.org/licenses/MIT)
-[![travis](https://img.shields.io/travis/Download/anylogger-loglevel.svg)](https://travis-ci.org/Download/anylogger-loglevel)
-[![greenkeeper](https://badges.greenkeeper.io/Download/anylogger-loglevel.svg)](https://greenkeeper.io/)
+[![travis](https://img.shields.io/travis/Download/anylogger-loglevel.svg)](https://travis-ci.org/Download/anylogger-loglevel?branch=master)
 ![mind BLOWN](https://img.shields.io/badge/mind-BLOWN-ff69b4.svg)
 
 <sup><sub><sup><sub>.</sub></sup></sub></sup>
@@ -16,19 +15,19 @@ This package is meant for application projects that are using libraries using `a
 
 ## Download
 
-* [anylogger-loglevel.js](https://unpkg.com/anylogger-loglevel@0.2.0/anylogger-loglevel.js) 
+* [anylogger-loglevel.js](https://unpkg.com/anylogger-loglevel@1.0.0/anylogger-loglevel.js) 
   (fully commented source ~1kB)
-* [anylogger-loglevel.min.js](https://unpkg.com/anylogger-loglevel@0.2.0/anylogger-loglevel.min.js) 
-  (minified 500 bytes, gzipped ~[300](#gzip-size) bytes)
+* [anylogger-loglevel.min.js](https://unpkg.com/anylogger-loglevel@1.0.0/anylogger-loglevel.min.js) 
+  (minified 472 bytes, gzipped ~[272](#gzip-size) bytes)
 
 
 ## CDN
 
 *index.html*
 ```html
-<script src="https://unpkg.com/anylogger@0.21.0/anylogger.min.js"></script>
-<script src="https://unpkg.com/loglevel@1.6.6/dist/loglevel.min.js"></script>
-<script src="https://unpkg.com/anylogger-loglevel@0.2.0/anylogger-loglevel.min.js"></script>
+<script src="https://unpkg.com/anylogger@1.0.3/anylogger.min.js"></script>
+<script src="https://unpkg.com/loglevel@1.6.8/dist/loglevel.min.js"></script>
+<script src="https://unpkg.com/anylogger-loglevel@1.0.0/anylogger-loglevel.min.js"></script>
 <script>(function(){ // IIFE
   var log = anylogger('index.html')
   log.info('Logging is simple!')
