@@ -16,12 +16,15 @@
   "min": "anylogger-loglevel.min.js",
   "spec": "anylogger-loglevel.spec.js",
   "files": [
-    "anylogger-loglevel.js",
-    "anylogger-loglevel.cjs.js",
-    "anylogger-loglevel.esm.js",
+    "anylogger-loglevel.cjs",
+    "anylogger-loglevel.d.ts",
+    "anylogger-loglevel.d.ts.map",
     "anylogger-loglevel.iife.js",
+    "anylogger-loglevel.js",
+    "anylogger-loglevel.js.map",
     "anylogger-loglevel.min.js",
     "anylogger-loglevel.spec.js",
+    "anylogger-loglevel.ts",
     "test.html"
   ],
   "scripts": {
