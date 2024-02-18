@@ -1,10 +1,17 @@
 {
   "name": "anylogger-loglevel",
-  "version": "1.0.0",
+  "version": "1.1.0-beta.0",
   "description": "Anylogger adapter for loglevel",
-  "src": "anylogger-loglevel.js",
-  "main": "anylogger-loglevel.cjs.js",
-  "module": "anylogger-loglevel.esm.js",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./anylogger-loglevel.js",
+      "require": "./anylogger-loglevel.cjs"
+    }
+  },
+  "src": "anylogger-loglevel.ts",
+  "main": "anylogger-loglevel.js",
+  "cjs": "anylogger-loglevel.cjs",
   "iife": "anylogger-loglevel.iife.js",
   "min": "anylogger-loglevel.min.js",
   "spec": "anylogger-loglevel.spec.js",
@@ -18,12 +25,13 @@
     "test.html"
   ],
   "scripts": {
-    "build": "npm run test -s && npm run minify -s && npm run docs -s",
+    "build": "tsc && npm run package && npm run minify && npm run docs",
+    "clean": "rimraf anylogger-loglevel.cjs anylogger-loglevel.d.ts anylogger-loglevel.d.ts.map anylogger-loglevel.iife.js anylogger-loglevel.js anylogger-loglevel.js.map anylogger-loglevel.min.js",
     "docs": "cross-env NODE_ENV=production node build.js docs",
     "minify": "cross-env NODE_ENV=production node build.js minify",
     "package": "cross-env NODE_ENV=production rollup -c",
-    "prepare": "npm run build",
-    "test": "npm run package -s && mocha anylogger-loglevel.spec.js"
+    "prepare": "npm run test",
+    "test": "npm run build && mocha anylogger-loglevel.spec.js"
   },
   "repository": {
     "type": "git",
@@ -41,22 +49,22 @@
     "url": "https://github.com/download/anylogger-loglevel/issues"
   },
   "homepage": "https://github.com/download/anylogger-loglevel#readme",
-  "dependencies": {
-    "anylogger": "^1.0.3",
-    "loglevel": "^1.6.8"
-  },
   "peerDependencies": {
-    "anylogger": "^1.0.3",
-    "loglevel": "^1.6.6"
+    "anylogger": "1.x || >=1.1.0-beta || >=1.2.0-beta || >=1.3.0-beta || >=1.4.0-beta || >=1.5.0-beta || >=1.6.0-beta || >=1.7.0-beta || >=1.8.0-beta || >=1.9.0-beta",
+    "loglevel": "1.x"
   },
   "devDependencies": {
-    "chai": "^4.2.0",
-    "cross-env": "^7.0.2",
-    "gzip-size": "^5.1.1",
-    "mocha": "^8.0.1",
-    "rollup": "^2.18.0",
+    "anylogger": "^1.1.0-beta.0",
+    "chai": "^5.1.0",
+    "cross-env": "^7.0.3",
+    "gzip-size": "^7.0.0",
+    "loglevel": "^1.9.1",
+    "mocha": "^10.3.0",
+    "rimraf": "^5.0.5",
+    "rollup": "^4.12.0",
     "rollup-plugin-re": "^1.0.7",
-    "sinon": "^9.0.2",
-    "uglify-js": "^3.10.0"
+    "sinon": "^17.0.1",
+    "typescript": "^5.3.3",
+    "uglify-js": "^3.17.4"
   }
 }

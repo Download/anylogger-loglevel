@@ -1,20 +1,17 @@
 import replace from 'rollup-plugin-re'
-import pkg from './package.json'
+import pkg from './package.json' assert { type: 'json' }
 
 export default [
 	{
-		input: pkg.src,
+		input: pkg.main,
 		output: [
-      // ES module build
-			{ file: pkg.module, format: 'esm', strict: false },
-
       // commonjs build
-			{ file: pkg.main,  format: 'cjs', strict: false },
+			{ file: pkg.cjs,  format: 'cjs', strict: false },
 		],
 		external: [ 'anylogger', 'loglevel' ],
 	},
 	{
-		input: pkg.src,
+		input: pkg.main,
 		output: [
       // browser-friendly build
 			{ file: pkg.iife,  format: 'iife', strict: false, globals: {anylogger: 'anylogger', loglevel: 'log'} },
@@ -24,17 +21,17 @@ export default [
 			// remove import bloat from iife bundle
 			replace({
 				patterns: [
-					{ 
-						match: /anylogger-loglevel/, 
-						test: 'import anylogger from \'anylogger\'', 
+					{
+						match: /anylogger-loglevel/,
+						test: 'import anylogger from \'anylogger\'',
 						replace: '',
 					}, {
-						match: /anylogger-loglevel/, 
-						test: 'import log from \'loglevel\'', 
+						match: /anylogger-loglevel/,
+						test: 'import log from \'loglevel\'',
 						replace: '',
 					},
 				]
 			})
-		],		
+		],
 	},
 ];
