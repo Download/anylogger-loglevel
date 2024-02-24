@@ -1,6 +1,6 @@
 {
   "name": "anylogger-loglevel",
-  "version": "1.1.0-beta.0",
+  "version": "1.1.0-beta.1",
   "description": "Anylogger adapter for loglevel",
   "type": "module",
   "exports": {
@@ -25,7 +25,8 @@
     "anylogger-loglevel.min.js",
     "anylogger-loglevel.spec.js",
     "anylogger-loglevel.ts",
-    "test.html"
+    "test.html",
+    "tsconfig.json"
   ],
   "scripts": {
     "build": "tsc && npm run package && npm run minify && npm run docs",
@@ -57,7 +58,7 @@
     "loglevel": "1.x"
   },
   "devDependencies": {
-    "anylogger": "^1.1.0-beta.0",
+    "anylogger": "^1.1.0-beta.4",
     "chai": "^5.1.0",
     "cross-env": "^7.0.3",
     "gzip-size": "^7.0.0",
@@ -65,7 +66,6 @@
     "mocha": "^10.3.0",
     "rimraf": "^5.0.5",
     "rollup": "^4.12.0",
-    "rollup-plugin-re": "^1.0.7",
     "sinon": "^17.0.1",
     "typescript": "^5.3.3",
     "uglify-js": "^3.17.4"

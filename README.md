@@ -1,4 +1,4 @@
-# anylogger-loglevel <sub><sup>1.1.0-beta.0</sup></sub>
+# anylogger-loglevel <sub><sup>1.1.0-beta.1</sup></sub>
 ### Anylogger adapter for loglevel
 
 [![npm](https://img.shields.io/npm/v/anylogger-loglevel.svg)](https://npmjs.com/package/anylogger-loglevel)
@@ -17,23 +17,23 @@ This package is meant for application projects that are using libraries using
 
 ## Download
 
-* [anylogger-loglevel.ts](https://unpkg.com/anylogger-loglevel@1.1.0-beta.0/anylogger-loglevel.ts)
+* [anylogger-loglevel.ts](https://unpkg.com/anylogger-loglevel@1.1.0-beta.1/anylogger-loglevel.ts)
   (fully commented source, ~2kB)
-* [anylogger-loglevel.js](https://unpkg.com/anylogger-loglevel@1.1.0-beta.0/anylogger-loglevel.js)
-  (transpiled esm module, ~1kB)
-* [anylogger-loglevel.cjs](https://unpkg.com/anylogger-loglevel@1.1.0-beta.0/anylogger-loglevel.cjs)
-  (transpiled commonjs module, ~1kB)
-* [anylogger-loglevel.min.js](https://unpkg.com/anylogger-loglevel@1.1.0-beta.0/anylogger-loglevel.min.js)
-  (minified 508 bytes, gzipped ~[284](#gzip-size) bytes)
+* [anylogger-loglevel.js](https://unpkg.com/anylogger-loglevel@1.1.0-beta.1/anylogger-loglevel.js)
+  (transpiled esm module, ~2kB)
+* [anylogger-loglevel.cjs](https://unpkg.com/anylogger-loglevel@1.1.0-beta.1/anylogger-loglevel.cjs)
+  (transpiled commonjs module, ~2kB)
+* [anylogger-loglevel.min.js](https://unpkg.com/anylogger-loglevel@1.1.0-beta.1/anylogger-loglevel.min.js)
+  (minified 513 bytes, gzipped ~[309](#gzip-size) bytes)
 
 
 ## CDN
 
 *index.html*
 ```html
-<script src="https://unpkg.com/anylogger@1.1.0-beta.0/anylogger.min.js"></script>
+<script src="https://unpkg.com/anylogger@1.1.0-beta.4/anylogger.min.js"></script>
 <script src="https://unpkg.com/loglevel@1.9.1/dist/loglevel.min.js"></script>
-<script src="https://unpkg.com/anylogger-loglevel@1.1.0-beta.0/anylogger-loglevel.min.js"></script>
+<script src="https://unpkg.com/anylogger-loglevel@1.1.0-beta.1/anylogger-loglevel.min.js"></script>
 <script>(function(){ // IIFE
   var log = anylogger('index.html')
   log.info('Logging is simple!')
